@@ -24,6 +24,7 @@ namespace ps_hellofriend.Controllers
         // GET: HelloFriend/Details/5
         public ActionResult Details(int id)
         {
+            ViewBag.Message = "[[[Welcome i18n]]]";
             return View();
         }
 

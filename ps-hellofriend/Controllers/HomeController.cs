@@ -22,7 +22,7 @@ namespace ps_hellofriend.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "[[[Welcome i18n]]]";
 
             return View();
         }
