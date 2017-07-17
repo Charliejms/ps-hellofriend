@@ -18,6 +18,11 @@ namespace ps_hellofriend
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+            routes.MapRoute(
+                name: "HelloFriend",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "HelloFriend", action = "", id = UrlParameter.Optional }
+            );
         }
     }
 }
