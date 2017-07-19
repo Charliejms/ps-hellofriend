@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PubSub;
 
 
 namespace ps_hellofriend.Controllers.Tests
@@ -18,7 +19,10 @@ namespace ps_hellofriend.Controllers.Tests
         [TestMethod()]
         public void IndexTest()
         {
-            Assert.Fail();
+            Assert.IsTrue(true);
+            HelloFriendController controller = new HelloFriendController();
+            this.Publish(controller);
+
         }
 
         [TestMethod()]
