@@ -6,11 +6,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace ps_hellofriend.Controllers.Tests
 {
     [TestClass()]
     public class HelloFriendControllerTests
     {
+        //using Albite.Test;
+        //using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
+        //private readonly Test.CollectionTest _test = new Test.CollectionTest();
         [TestMethod()]
         public void IndexTest()
         {
