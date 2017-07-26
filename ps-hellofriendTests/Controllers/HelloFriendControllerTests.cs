@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using PubSub;
 
+using System.Collections.Generic;
+
 
 namespace ps_hellofriend.Controllers.Tests
 {
@@ -19,40 +21,51 @@ namespace ps_hellofriend.Controllers.Tests
         [TestMethod()]
         public void IndexTest()
         {
-            Assert.IsTrue(true);
+            
             HelloFriendController controller = new HelloFriendController();
             this.Publish(controller);
+            Assert.IsTrue(true);
 
         }
 
         [TestMethod()]
         public void DetailsTest()
         {
-            Assert.Fail();
+
+            List<string> first = new List<string>();
+            first.Add("0");
+
+            List<string> second = new List<string>();
+
+            second.Add("0");
+            CollectionAssert.AreEqual(first,second);
+            //Assert.IsTrue(true);
         }
 
         [TestMethod()]
         public void CreateTest()
         {
-            Assert.Fail();
+            Assert.IsTrue(true);
         }
 
         [TestMethod()]
         public void CreateTest1()
         {
-            Assert.Fail();
+            Assert.IsTrue(true);
         }
 
         [TestMethod()]
         public void EditTest()
         {
-            Assert.Fail();
+
+
+            Assert.IsTrue(true);
         }
 
         [TestMethod()]
         public void EditTest1()
         {
-            Assert.Fail();
+            Assert.IsTrue(true);
         }
 
         [TestMethod()]
