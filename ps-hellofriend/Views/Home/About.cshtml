@@ -1,8 +1,13 @@
 ﻿@{
     ViewBag.Title = "About";
+    ViewBag.Message = "Say Hello ";
 }
+@using ps_hellofriend.Resources;
+
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
+@*<p>@Html.Label("")</p>*@
+<p>@Html.Label(Resource_fr.about)</p>
 
 <p>Hello Friend Richard Cacuango Azure deploy example.</p>
 

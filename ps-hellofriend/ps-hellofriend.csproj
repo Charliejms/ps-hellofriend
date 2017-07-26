@@ -45,11 +45,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="i18n, Version=2.1.10.0, Culture=neutral, PublicKeyToken=b54a7283d4bad1bb, processorArchitecture=MSIL">
       <HintPath>..\packages\i18n.2.1.10\lib\net40\i18n.dll</HintPath>
     </Reference>
     <Reference Include="i18n.Domain, Version=2.1.10.0, Culture=neutral, PublicKeyToken=b54a7283d4bad1bb, processorArchitecture=MSIL">
       <HintPath>..\packages\i18n.2.1.10\lib\net40\i18n.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.5.452, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\RESXManager.1.7\lib\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
@@ -58,18 +67,41 @@
     <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.PowerShell.Commands.Utility, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\RESXManager.1.7\lib\Microsoft.PowerShell.Commands.Utility.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="RESXManager.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RESXManager.1.7\lib\RESXManager.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="RESXManager.Presentation.PureNet, Version=1.0.4643.33716, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RESXManager.1.7\lib\RESXManager.Presentation.PureNet.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management.Automation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\RESXManager.1.7\lib\System.Management.Automation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -150,35 +182,176 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_GlobalResources\ControlNames.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ControlNames.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\RESXManagerGlobal.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RESXManagerGlobal.resx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\StartupLocale.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HelloFriendController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LanguajeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\UserModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources\Resource.en.Designer.cs">
+    <Compile Include="Resources\Resource-en.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Resource.en.resx</DependentUpon>
+      <DependentUpon>Resource-en.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Resource-es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource-es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Resource-fr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource-fr.resx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Controls\RESXManager\FileManagement.ascx" />
+    <Content Include="Controls\RESXManager\FilterControls\SearchByBrowsing.ascx" />
+    <Content Include="Controls\RESXManager\FilterControls\SearchByText.ascx" />
+    <Content Include="Controls\RESXManager\FilterControls\SearchByUrl.ascx" />
+    <Content Include="Controls\RESXManager\Labels.ascx" />
+    <Content Include="Controls\RESXManager\Labels\LabelsSearchResult.ascx" />
+    <Content Include="Controls\RESXManager\Labels\LabelsSearchResultItem.ascx" />
+    <Content Include="Controls\RESXManager\Labels\LabelsSearchResultList.ascx" />
+    <Content Include="Controls\RESXManager\RegionalSettings.ascx" />
+    <Content Include="Controls\RESXManager\ToolTabs.ascx" />
+    <Content Include="css\RESXManager\android.css" />
+    <Content Include="css\RESXManager\dd.css" />
+    <Content Include="css\RESXManager\ResourceEditor.css" />
+    <Content Include="css\RESXManager\spellchecker.css" />
+    <Content Include="css\RESXManager\webos.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\RESXManager\arrow-down.png" />
+    <Content Include="images\RESXManager\arrow-hor-big.png" />
+    <Content Include="images\RESXManager\arrow-hor.gif" />
+    <Content Include="images\RESXManager\arrow-hor2.gif" />
+    <Content Include="images\RESXManager\arrow-up.png" />
+    <Content Include="images\RESXManager\arrow-vert-big.png" />
+    <Content Include="images\RESXManager\arrow-vert.gif" />
+    <Content Include="images\RESXManager\arrow_blue_double.png" />
+    <Content Include="images\RESXManager\arrow_blue_double_small.gif" />
+    <Content Include="images\RESXManager\arrow_blue_double_small.png" />
+    <Content Include="images\RESXManager\arrow_blue_down.png" />
+    <Content Include="images\RESXManager\arrow_blue_small.gif" />
+    <Content Include="images\RESXManager\attention.png" />
+    <Content Include="images\RESXManager\bg-overlay.png" />
+    <Content Include="images\RESXManager\bg-pnl-footer.png" />
+    <Content Include="images\RESXManager\bg-pnl-header.png" />
+    <Content Include="images\RESXManager\bg-tab-nav.gif" />
+    <Content Include="images\RESXManager\bg-tooltab-act.png" />
+    <Content Include="images\RESXManager\bg-tooltab.png" />
+    <Content Include="images\RESXManager\btn-right.png" />
+    <Content Include="images\RESXManager\btn.png" />
+    <Content Include="images\RESXManager\comments-blue.png" />
+    <Content Include="images\RESXManager\comments-grey.png" />
+    <Content Include="images\RESXManager\corner_tooltip_lb.gif" />
+    <Content Include="images\RESXManager\corner_tooltip_lt.gif" />
+    <Content Include="images\RESXManager\corner_tooltip_rb.gif" />
+    <Content Include="images\RESXManager\corner_tooltip_rt.gif" />
+    <Content Include="images\RESXManager\dd_arrow.gif" />
+    <Content Include="images\RESXManager\exclamation.png" />
+    <Content Include="images\RESXManager\hyphen.png" />
+    <Content Include="images\RESXManager\icon-browse.png" />
+    <Content Include="images\RESXManager\icon-delete.png" />
+    <Content Include="images\RESXManager\icon-download.png" />
+    <Content Include="images\RESXManager\icon-edit.png" />
+    <Content Include="images\RESXManager\icon-file.gif" />
+    <Content Include="images\RESXManager\icon-label-min.gif" />
+    <Content Include="images\RESXManager\icon-label.png" />
+    <Content Include="images\RESXManager\icon-map.png" />
+    <Content Include="images\RESXManager\icon-search.png" />
+    <Content Include="images\RESXManager\icon-upload.png" />
+    <Content Include="images\RESXManager\icone-button.png" />
+    <Content Include="images\RESXManager\icone-checkbox.png" />
+    <Content Include="images\RESXManager\icone-gridview.png" />
+    <Content Include="images\RESXManager\icone-hyperlink.png" />
+    <Content Include="images\RESXManager\icone-image.png" />
+    <Content Include="images\RESXManager\icone-imagebutton.png" />
+    <Content Include="images\RESXManager\icone-information.png" />
+    <Content Include="images\RESXManager\icone-label.png" />
+    <Content Include="images\RESXManager\icone-linkbutton.png" />
+    <Content Include="images\RESXManager\icone-list.png" />
+    <Content Include="images\RESXManager\icone-literal.png" />
+    <Content Include="images\RESXManager\icone-panel.png" />
+    <Content Include="images\RESXManager\icone-question.png" />
+    <Content Include="images\RESXManager\icone-radiobutton.png" />
+    <Content Include="images\RESXManager\icone-textbox.png" />
+    <Content Include="images\RESXManager\icone-tick.png" />
+    <Content Include="images\RESXManager\icone-undefined.png" />
+    <Content Include="images\RESXManager\icone-validator.png" />
+    <Content Include="images\RESXManager\loading-big.gif" />
+    <Content Include="images\RESXManager\loading.gif" />
+    <Content Include="images\RESXManager\main-bordered-lb.gif" />
+    <Content Include="images\RESXManager\main-bordered-rb.gif" />
+    <Content Include="images\RESXManager\main-bordered-rt.gif" />
+    <Content Include="images\RESXManager\main-colored-lb.gif" />
+    <Content Include="images\RESXManager\main-colored-rb.gif" />
+    <Content Include="images\RESXManager\main-colored-rt.gif" />
+    <Content Include="images\RESXManager\pnl-footer-left.png" />
+    <Content Include="images\RESXManager\pnl-footer-right.png" />
+    <Content Include="images\RESXManager\pnl-header-left.png" />
+    <Content Include="images\RESXManager\pnl-header-right.png" />
+    <Content Include="images\RESXManager\popup-bottom-shadow.png" />
+    <Content Include="images\RESXManager\popup-close.gif" />
+    <Content Include="images\RESXManager\popup-left-shadow.png" />
+    <Content Include="images\RESXManager\popup-shadow-corner.png" />
+    <Content Include="images\RESXManager\popup-title-bg.png" />
+    <Content Include="images\RESXManager\question.png" />
+    <Content Include="images\RESXManager\snowflake.gif" />
+    <Content Include="images\RESXManager\spellcheck.png" />
+    <Content Include="images\RESXManager\spellchecker_bg.gif" />
+    <Content Include="images\RESXManager\spellchecker_shadow.png" />
+    <Content Include="images\RESXManager\star.png" />
+    <Content Include="images\RESXManager\sub-tabs-bg.png" />
+    <Content Include="images\RESXManager\tab-left-act.png" />
+    <Content Include="images\RESXManager\tab-left.png" />
+    <Content Include="images\RESXManager\tab-right-act.png" />
+    <Content Include="images\RESXManager\tab-right.png" />
+    <Content Include="images\RESXManager\table-corner.png" />
+    <Content Include="images\RESXManager\tooltab-left-act.png" />
+    <Content Include="images\RESXManager\tooltab-left.png" />
+    <Content Include="images\RESXManager\tooltab-right-act.png" />
+    <Content Include="images\RESXManager\tooltab-right.png" />
+    <Content Include="images\RESXManager\tooltip-arrow.gif" />
+    <Content Include="images\RESXManager\txt-left.png" />
+    <Content Include="images\RESXManager\txt-right.png" />
+    <Content Include="images\RESXManager\uploading_file.gif" />
+    <Content Include="images\RESXManager\validation-line.png" />
+    <Content Include="Pages\RESXManager\Editor.aspx" />
+    <Content Include="Pages\RESXManager\FileManagement.aspx" />
+    <Content Include="Pages\RESXManager\RegionalSettings.aspx" />
     <Content Include="readme.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Handlers\RESXManager\JQuerySpellCheckerHandler.ashx" />
+    <Content Include="Handlers\RESXManager\DownloadFile.ashx" />
+    <Content Include="Handlers\RESXManager\AutoTranslation.ashx" />
+    <Content Include="config\RESXManager.config" />
     <None Include="Properties\PublishProfiles\ps-hellofriend - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -191,6 +364,12 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\resxmanager\jquery-1.7.1.min.js" />
+    <Content Include="Scripts\resxmanager\jquery.data.js" />
+    <Content Include="Scripts\resxmanager\jquery.dd.js" />
+    <Content Include="Scripts\resxmanager\jquery.spellchecker.js" />
+    <Content Include="Scripts\resxmanager\jquery.textarea-expander.js" />
+    <Content Include="Scripts\resxmanager\jquery.watermark.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -205,12 +384,13 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Languaje\Languaje.cshtml" />
+    <Content Include="Templates\RESXManager\ResxManagerGlobalTemplate.Master" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="locale\en\" />
     <Folder Include="locale\es\" />
-    <Folder Include="Models\" />
     <Folder Include="Views\HelloFriend\" />
   </ItemGroup>
   <ItemGroup>
@@ -229,9 +409,38 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\Resource.en.resx">
+    <Content Include="Pages\RESXManager\App_LocalResources\Editor.aspx.resx" />
+    <Content Include="Pages\RESXManager\App_LocalResources\FileManagement.aspx.resx" />
+    <Content Include="Pages\RESXManager\App_LocalResources\RegionalSettings.aspx.resx" />
+    <Content Include="Controls\RESXManager\Labels\App_LocalResources\LabelsSearchResult.ascx.resx" />
+    <Content Include="Controls\RESXManager\Labels\App_LocalResources\LabelsSearchResultItem.ascx.resx" />
+    <Content Include="Controls\RESXManager\Labels\App_LocalResources\LabelsSearchResultList.ascx.resx" />
+    <Content Include="Controls\RESXManager\FilterControls\App_LocalResources\SearchByText.ascx.resx" />
+    <Content Include="Controls\RESXManager\FilterControls\App_LocalResources\SearchByUrl.ascx.resx" />
+    <Content Include="Controls\RESXManager\FilterControls\App_LocalResources\SearchByBrowsing.ascx.resx" />
+    <Content Include="Controls\RESXManager\App_LocalResources\ToolTabs.ascx.resx" />
+    <Content Include="Controls\RESXManager\App_LocalResources\RegionalSettings.ascx.resx" />
+    <Content Include="Controls\RESXManager\App_LocalResources\Labels.ascx.resx" />
+    <Content Include="Controls\RESXManager\App_LocalResources\FileManagement.ascx.resx" />
+    <Content Include="App_GlobalResources\RESXManagerGlobal.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>RESXManagerGlobal.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\ControlNames.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>ControlNames.designer.cs</LastGenOutput>
+    </Content>
+    <EmbeddedResource Include="Resources\Resource-en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource-en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Resource-es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource-es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Resource-fr.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resource.en.Designer.cs</LastGenOutput>
+      <LastGenOutput>Resource-fr.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

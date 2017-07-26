@@ -112,21 +112,62 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About" xml:space="preserve">
-    <value>About</value>
+  <data name="MediumTrustAddRemoveLanguageFromConfig" xml:space="preserve">
+    <value>You have added/removed "##SelectedCultureFullName##" resource files. Because you are running in Medium trust mode or below, please go to &lt;span style="color:red;"&gt;ROOT_OF_YOUR_SITE\\config\\RESXManager.config&lt;/span&gt; file and add/remove the following entry manually:
+&lt;br/&gt;
+In setting's &lt;span style="color:red;"&gt;key="Main.Languages"&lt;/span&gt; add/remove to &lt;span style="color:red;"&gt;value&lt;/span&gt; attribute "&lt;span style="color:red;"&gt;##SelectedCulture##&lt;/span&gt;". 
+&lt;br/&gt;
+Note that different cultures in &lt;span style="color:red;"&gt;value&lt;/span&gt; attribute are delimited with &lt;span style="color:red;"&gt;","(comma)&lt;/span&gt;.
+&lt;br/&gt;
+&lt;br/&gt;
+For example:
+&lt;br/&gt;
+1) Adding "da-DK" culture:
+&lt;br/&gt;
+a) Initial value:
+&lt;br/&gt;
+...
+&lt;br/&gt;
+    &amp;lt;setting key="Main.Languages" value="en-US" /&amp;gt;
+&lt;br/&gt;
+...
+&lt;br/&gt;
+b) After adding "da-DK" culture:
+&lt;br/&gt;
+...
+&lt;br/&gt;
+    &amp;lt;setting key="Main.Languages" value="en-US,da-DK" /&amp;gt;
+&lt;br/&gt;
+...
+&lt;br/&gt;
+2) Removing "da-DK" culture:
+&lt;br/&gt;
+a) Initial value:
+&lt;br/&gt;
+...
+&lt;br/&gt;
+    &amp;lt;setting key="Main.Languages" value="en-US,da-DK" /&amp;gt;
+&lt;br/&gt;
+...
+&lt;br/&gt;
+b) After removing "da-DK" culture:
+&lt;br/&gt;
+...
+&lt;br/&gt;
+    &amp;lt;setting key="Main.Languages" value="en-US" /&amp;gt;
+&lt;br/&gt;
+...
+&lt;br/&gt;</value>
   </data>
-  <data name="Contact" xml:space="preserve">
-    <value>Contact</value>
+  <data name="MediumTrustTitle" xml:space="preserve">
+    <value>You are running in Medium trust mode or below</value>
   </data>
-  <data name="Help" xml:space="preserve">
-    <value>Help resources</value>
-  </data>
-  <data name="Home" xml:space="preserve">
-    <value>Home</value>
+  <data name="ModifiedDataPromptMessage" xml:space="preserve">
+    <value>You have modified the data entry fields since last savings. If you leave this page, any changes will be lost. To save these changes, click Cancel to return to the page, and then Save the data.</value>
   </data>
 </root>

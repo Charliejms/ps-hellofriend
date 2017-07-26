@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Resources; // library
 using System.Web;
 using System.Web.Mvc;
+
 
 namespace ps_hellofriend.Controllers
 {
@@ -15,6 +17,15 @@ namespace ps_hellofriend.Controllers
             studentList.Add("Richard");
             studentList.Add("Javier");
             studentList.Add("Laura");
+
+            // Varibles de Resources desde los controllers
+            var sayEn = Resources.Resource_en.about;
+            var sayEs = Resources.Resource_es.about;
+
+            //var typeString = typeof(Resources);
+            //ResourceManager res_msg = new ResourceManager(typeString);
+            //var str = res_msg.GetString("about");
+            
 
             ViewData["students"] = studentList;
 
