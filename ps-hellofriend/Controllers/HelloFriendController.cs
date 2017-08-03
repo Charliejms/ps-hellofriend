@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.Localization;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Resources; // library
@@ -6,13 +7,28 @@ using System.Web;
 using System.Web.Mvc;
 
 
+
 namespace ps_hellofriend.Controllers
 {
     public class HelloFriendController : Controller
     {
+        IStringLocalizer<HelloFriendController> _stringLocalizer;
         // GET: HelloFriend
+
+        public HelloFriendController(IStringLocalizer<HelloFriendController> stringLocalizer) {
+
+            _stringLocalizer = stringLocalizer;
+        }
+
+        public HelloFriendController()
+        {
+        }
+
         public ActionResult Index()
         {
+
+
+           
             IList<String> studentList = new List<String>();
             studentList.Add("Richard");
             studentList.Add("Javier");
@@ -28,6 +44,7 @@ namespace ps_hellofriend.Controllers
             
 
             ViewData["students"] = studentList;
+            ViewData["Message"] = _stringLocalizer["Your app description page"];
 
             return View();
         }
