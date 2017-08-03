@@ -51,19 +51,19 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="i18n, Version=2.1.10.0, Culture=neutral, PublicKeyToken=b54a7283d4bad1bb, processorArchitecture=MSIL">
-      <HintPath>..\packages\i18n.2.1.10\lib\net40\i18n.dll</HintPath>
-    </Reference>
-    <Reference Include="i18n.Domain, Version=2.1.10.0, Culture=neutral, PublicKeyToken=b54a7283d4bad1bb, processorArchitecture=MSIL">
-      <HintPath>..\packages\i18n.2.1.10\lib\net40\i18n.Domain.dll</HintPath>
-    </Reference>
     <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.5.452, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
       <HintPath>..\packages\RESXManager.1.7\lib\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Mailzory, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mailzory.1.2.0\lib\net451\Mailzory.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.Localization.Abstractions, Version=1.1.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Localization.Abstractions.1.1.2\lib\netstandard1.0\Microsoft.Extensions.Localization.Abstractions.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
     </Reference>
@@ -71,8 +71,14 @@
       <HintPath>..\packages\RESXManager.1.7\lib\Microsoft.PowerShell.Commands.Utility.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="NGettext, Version=0.6.1.0, Culture=neutral, PublicKeyToken=08d3d1c89dfd2985, processorArchitecture=MSIL">
+      <HintPath>..\packages\NGettext.0.6.2\lib\net45\NGettext.dll</HintPath>
+    </Reference>
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorEngine, Version=3.10.0.0, Culture=neutral, PublicKeyToken=9ee697374c7e744a, processorArchitecture=MSIL">
+      <HintPath>..\packages\RazorEngine.3.10.0\lib\net45\RazorEngine.dll</HintPath>
     </Reference>
     <Reference Include="RESXManager.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\RESXManager.1.7\lib\RESXManager.Core.dll</HintPath>
@@ -81,14 +87,20 @@
       <HintPath>..\packages\RESXManager.1.7\lib\RESXManager.Presentation.PureNet.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
     <Reference Include="System.Management.Automation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\RESXManager.1.7\lib\System.Management.Automation.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -203,8 +215,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Mail\MailController\MailController.cs" />
     <Compile Include="Models\UserModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Controllers.HelloFriendController.es-ES.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Controllers.HelloFriendController.es-ES.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ControllersHelloFriendController_es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ControllersHelloFriendController_es.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Resource_en.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -342,7 +365,6 @@
     <Content Include="Pages\RESXManager\Editor.aspx" />
     <Content Include="Pages\RESXManager\FileManagement.aspx" />
     <Content Include="Pages\RESXManager\RegionalSettings.aspx" />
-    <Content Include="readme.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -352,6 +374,7 @@
     <Content Include="Handlers\RESXManager\DownloadFile.ashx" />
     <Content Include="Handlers\RESXManager\AutoTranslation.ashx" />
     <Content Include="config\RESXManager.config" />
+    <Content Include="Mail\Templates\Mail.cshtml" />
     <None Include="Properties\PublishProfiles\ps-hellofriend - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -389,9 +412,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="locale\en\" />
-    <Folder Include="locale\es\" />
     <Folder Include="Views\HelloFriend\" />
+    <Folder Include="Views\Mail\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -430,6 +452,14 @@
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>ControlNames.designer.cs</LastGenOutput>
     </Content>
+    <EmbeddedResource Include="Resources\Controllers.HelloFriendController.es-ES.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Controllers.HelloFriendController.es-ES.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ControllersHelloFriendController_es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ControllersHelloFriendController_es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Resource_en.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource_en.Designer.cs</LastGenOutput>

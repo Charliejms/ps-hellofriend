@@ -21,7 +21,7 @@ namespace ps_hellofriend.Controllers.Tests
         [TestMethod()]
         public void IndexTest()
         {
-            
+
             HelloFriendController controller = new HelloFriendController();
             this.Publish(controller);
             Assert.IsTrue(true);

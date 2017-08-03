@@ -12,5 +12,8 @@ namespace ps_hellofriend.Models
 {
     public class UserModels
     {
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public bool IsPremiunUser { get; set; }
     }
 }
