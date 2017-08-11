@@ -1,0 +1,16 @@
+{
+  "id": "d27829a3-0523-4690-8096-ffbada070a6a",
+  "name": "Send template email to rcacuango@at4.net",
+  "form": "acd51c3e-abd5-4618-8eee-ffbeb7d1c597",
+  "active": true,
+  "workflowTypeId": "17c61629-d984-4e86-b43b-a8407b3efea9",
+  "executesOn": "Submitted",
+  "settings": {
+    "Email": "rcacuango@at4.net",
+    "SenderEmail": "",
+    "Subject": "The Form '{form_name}' was submitted",
+    "RazorViewFilePath": "Forms/Emails/Example-Template.cshtml",
+    "Attachment": ""
+  },
+  "sortOrder": 1
+}
