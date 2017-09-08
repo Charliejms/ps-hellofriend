@@ -251,6 +251,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".gitignore" />
     <Content Include="packages.config" />
     <Content Include="config\imageprocessor\security.config" />
     <Content Include="config\imageprocessor\processing.config" />
@@ -3321,6 +3322,7 @@
     <Folder Include="App_Data\NuGetBackup\20170807-163247\Umbraco\" />
     <Folder Include="App_Data\NuGetBackup\20170807-163247\Umbraco_Client\" />
     <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="Views\Widget\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
