@@ -1,0 +1,19 @@
+{
+  "name": "ps-hellofriend",
+  "version": "1.0.0",
+  "description": "Test gulp in Visual Studio",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "\u0016\u0016"
+  },
+  "keywords": [
+    "c#",
+    "gulp"
+  ],
+  "author": "Richard Cacuango",
+  "license": "ISC"
+}
